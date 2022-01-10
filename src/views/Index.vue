@@ -49,7 +49,7 @@
                     <span class="contract-account">({{$t('index.your_eth_address')}})</span>
                     <a-tooltip>
                         <template slot="title">
-                        请使用自己控制私钥的REI钱包地址
+                        {{$t('index.wallet_tip')}}
                         </template>
                         <a-icon type="question-circle" />
                     </a-tooltip>

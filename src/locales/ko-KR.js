@@ -17,7 +17,8 @@ const locale = {
     minutes: '분',
     addtips: 'Add REI Network',
     autoAdd: 'Auto Add',
-    manualAdd: 'Manual Add'
+    manualAdd: 'Manual Add',
+    wallet_tip: 'Please use the REI wallet address where you control the private key'
   }
 };
 export default locale;
