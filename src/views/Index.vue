@@ -40,12 +40,12 @@
                 <p>{{$t('index.please_deposit_to_account')}}<strong>Memo</strong></p>
                 <div class="deposit-main">
                   <div>
-                    <strong>*{{$t('index.account_name')}}:&nbsp;&nbsp;</strong>
+                    <strong>{{$t('index.account_name')}}*:&nbsp;&nbsp;</strong>
                     <span class="contract-account">gxc-convert</span>
                     <a-button class="btn-copy" type="primary" size="small" :disabled="copied" ghost @click="copyGXCAddr">{{ copied ? $t('index.already_copied') : $t('index.copy')}}</a-button>
                   </div>
                   <div>
-                    <strong>*Memo/Tag({{$t('index.marked')}}):</strong>
+                    <strong>Memo/Tag({{$t('index.marked')}})*:</strong>
                     <span class="contract-account">({{$t('index.your_eth_address')}})</span>
                     <a-tooltip>
                         <template slot="title">
@@ -54,7 +54,7 @@
                         <a-icon type="question-circle" />
                     </a-tooltip>
                   </div>
-                  <div><strong>{{$t('index.estimated_arrived_time')}}:</strong> <span class="contract-account">24{{$t('index.hours')}}</span></div>
+                  <div><strong>{{$t('index.estimated_arrived_time')}}:</strong> <span class="contract-account">24 {{$t('index.hours')}}</span></div>
                   
                 </div>
               </div>
@@ -64,8 +64,8 @@
                 <div class="tips-bottom">
                   <ul>
                     
-                    <li><strong>{{$t('index.autoAdd')}}</strong> <a-button class="btn-copy" type="primary" size="small" ghost @click="addREI">点击添加</a-button></li>
-                    <li><strong>{{$t('index.manualAdd')}}</strong> </li>
+                    <li><strong>{{$t('index.autoAdd')}}: </strong> <a-button class="btn-copy" type="primary" size="small" ghost @click="addREI">{{$t('index.click_to_add')}}</a-button></li>
+                    <li><strong>{{$t('index.manualAdd')}}: </strong> </li>
                     <li class="entryWrap">
                         <strong>Network Name: </strong>REI Network<br>
                         <strong>RPC URL: </strong>https://rpc.rei.network<br>
@@ -377,9 +377,10 @@ export default {
     line-height: 200%;
   }
   .entryWrap {
+    padding: 0.8rem;
     padding-left: 1rem;
     border-radius: 10px;
-    background-color: #e8e8e8;
+    background-color: #d1d1d1;
   }
   .addReiWap{
       background-color: #eee;

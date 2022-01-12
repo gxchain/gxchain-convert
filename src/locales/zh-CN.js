@@ -16,7 +16,8 @@ const locale = {
     addtips: '添加REI Network',
     autoAdd: '自动添加：',
     manualAdd: '手动添加：',
-    wallet_tip: '请使用自己控制私钥的REI钱包地址'
+    wallet_tip: '请使用自己控制私钥的REI钱包地址',
+    click_to_add: '点击添加'
   }
 };
 export default locale;

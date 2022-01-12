@@ -1,6 +1,6 @@
 const locale = {
   index: {
-    hours:'Hour',
+    hours:'Hours',
     account_has_already_copied: 'Account address is copied',
     convert: 'Convert',
     convert_type: 'Convert Type',
@@ -18,7 +18,8 @@ const locale = {
     addtips: 'Add REI Network',
     autoAdd: 'Auto Add',
     manualAdd: 'Manual Add',
-    wallet_tip: 'Please use the REI wallet address where you control the private key'
+    wallet_tip: 'Please use the REI wallet address where you control the private key',
+    click_to_add: 'Click Add'
   }
 };
 export default locale;
