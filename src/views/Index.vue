@@ -46,7 +46,7 @@
                   </div>
                   <div>
                     <strong>Memo/Tag({{$t('index.marked')}})*:</strong>
-                    <span class="contract-account">({{$t('index.your_eth_address')}})</span>
+                    <span class="contract-account"> ({{$t('index.your_eth_address')}})</span>
                     <a-tooltip>
                         <template slot="title">
                         {{$t('index.wallet_tip')}}
@@ -54,7 +54,7 @@
                         <a-icon type="question-circle" />
                     </a-tooltip>
                   </div>
-                  <div><strong>{{$t('index.estimated_arrived_time')}}:</strong> <span class="contract-account">24 {{$t('index.hours')}}</span></div>
+                  <div><strong>{{$t('index.estimated_arrived_time')}}:</strong> <span class="contract-account"> 24 {{$t('index.hours')}}</span></div>
                   
                 </div>
               </div>
@@ -64,15 +64,15 @@
                 <div class="tips-bottom">
                   <ul>
                     
-                    <li><strong>{{$t('index.autoAdd')}}: </strong> <a-button class="btn-copy" type="primary" size="small" ghost @click="addREI">{{$t('index.click_to_add')}}</a-button></li>
-                    <li><strong>{{$t('index.manualAdd')}}: </strong> </li>
+                    <li><strong class="add-content-title">{{$t('index.autoAdd')}}: </strong> <a-button class="btn-copy" type="primary" size="small" ghost @click="addREI">{{$t('index.click_to_add')}}</a-button></li>
                     <li class="entryWrap">
-                        <strong>Network Name: </strong>REI Network<br>
-                        <strong>RPC URL: </strong>https://rpc.rei.network<br>
-                        <strong>ChainID: </strong> 47805<br>
-                        <strong>Symbol: </strong> REI<br>
-                        <strong>Decimals: </strong> 18<br>
-                        <strong>Explorer: </strong> https://scan.rei.network <br>
+                        <div class="entry-point"><strong class="entry-point-title">{{$t('index.manualAdd')}} </strong> </div>
+                        <strong class="entry-point-title">Network Name: </strong> <CopyText :val="'REI Network'"></CopyText><br>
+                        <strong class="entry-point-title">RPC URL: </strong> <CopyText :val="'https://rpc.rei.network'"></CopyText><br>
+                        <strong class="entry-point-title">ChainID: </strong> <CopyText :val="'47805'"></CopyText><br>
+                        <strong class="entry-point-title">Symbol: </strong> <CopyText :val="'REI'"></CopyText><br>
+                        <strong class="entry-point-title">Decimals: </strong> <CopyText :val="'18'"></CopyText><br>
+                        <strong class="entry-point-title">Explorer: </strong> <CopyText :val="'https://scan.rei.network'"></CopyText><br>
                     </li>
                   </ul>
               </div>
@@ -87,6 +87,7 @@
 
 <script>
 import HeaderNav from '@/components/HeaderNav.vue';
+import CopyText from '@/components/CopyText.vue';
 import filters from '@/filters';
 import { Message } from 'ant-design-vue';
 import Web3 from 'web3';
@@ -96,7 +97,8 @@ import Web3 from 'web3';
 export default {
   name: 'Home',
   components: {
-    HeaderNav
+    HeaderNav,
+    CopyText
   },
   filters,
   data() {
@@ -377,11 +379,22 @@ export default {
     line-height: 200%;
   }
   .entryWrap {
+    margin-top: 0.8rem;
     padding: 0.8rem;
     padding-left: 1rem;
     border-radius: 10px;
     background-color: #d1d1d1;
+    .entry-point{
+        padding-bottom: 0.2rem;
+        margin-bottom: 0.2rem;
+        font-size: .65rem;
+        border-bottom: 1px dashed #a19e9e;
+    }
   }
+  .add-content-title{
+      font-size: .65rem;
+      color: #595959;
+   }
   .addReiWap{
       background-color: #eee;
   }
