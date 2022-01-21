@@ -23,29 +23,33 @@
     </header-nav>
     <div class="contentWrap">
       <div class="contentContainer">
-        <a-tabs type="card" :animated="false" v-model="activeKey">
-          <a-tab-pane key="1" :tab="$t('index.convert')">
+          <a-card
+            class="convertCard"
+          >
+            <h2 class="top_title">{{$t('index.convert')}}</h2>
             <a-form-model>
-              <a-form-model-item :label-col="formItemLayout.labelCol" :wrapper-col="formItemLayout.wrapperCol" :label="$t('index.convert_type')">
-                <a-row :gutter="8" class="line-bottom">
+              <a-form-model-item class="formWrap" labelAlign="left" :label-col="formItemLayout.labelCol" :wrapper-col="formItemLayout.wrapperCol" :label="$t('index.convert_type')">
+                <a-row :gutter="8" >
                   <a-col :span="8" class="coin-name-wrap"> <img src="../assets/images/gxc.png" class="icon-wrap" /> <span>GXC</span> </a-col>
-                  <a-col :span="4">
+                  <a-col :span="4" class="icon-arraw-wrap">
+                      (1:10)
                     <img src="../assets/images/icon-arrow.png" class="icon-wrap icon-arrow" />
                   </a-col>
                   <a-col :span="8" class="coin-name-wrap"> <img src="../assets/images/rei.svg" class="icon-wrap" /> <span>REI</span> </a-col>
                 </a-row>
               </a-form-model-item>
+
               <div class="depositDesc">
-                <div class="tips-title">{{$t('index.tips')}}</div>
+                
                 <p>{{$t('index.please_deposit_to_account')}}<strong>Memo</strong></p>
                 <div class="deposit-main">
                   <div>
-                    <strong>{{$t('index.account_name')}}*:&nbsp;&nbsp;</strong>
+                    <strong>{{$t('index.account_name')}}<span class='red'>*</span>:&nbsp;&nbsp;</strong>
                     <span class="contract-account">gxc-convert</span>
                     <a-button class="btn-copy" type="primary" size="small" :disabled="copied" ghost @click="copyGXCAddr">{{ copied ? $t('index.already_copied') : $t('index.copy')}}</a-button>
                   </div>
                   <div>
-                    <strong>Memo/Tag({{$t('index.marked')}})*:</strong>
+                    <strong>Memo/Tag({{$t('index.marked')}})<span class='red'>*</span>:</strong>
                     <span class="contract-account"> ({{$t('index.your_eth_address')}})</span>
                     <a-tooltip>
                         <template slot="title">
@@ -54,8 +58,9 @@
                         <a-icon type="question-circle" />
                     </a-tooltip>
                   </div>
-                  <div><strong>{{$t('index.estimated_arrived_time')}}:</strong> <span class="contract-account"> 24 {{$t('index.hours')}}</span></div>
-                  
+                </div>
+                <div class="tips-bottom">
+                    <p>{{$t('index.estimated_arrived_time')}}<span class="contract-account">24{{$t('index.hours')}}</span></p>
                 </div>
               </div>
               <div class="depositDesc addReiWap">
@@ -63,10 +68,8 @@
                 
                 <div class="tips-bottom">
                   <ul>
-                    
-                    <li><strong class="add-content-title">{{$t('index.autoAdd')}}: </strong> <a-button class="btn-copy" type="primary" size="small" ghost @click="addREI">{{$t('index.click_to_add')}}</a-button></li>
+                    <li> <a-button class="btn-copy" type="primary" size="small" ghost @click="addREI">{{$t('index.click_to_add')}}</a-button></li>
                     <li class="entryWrap">
-                        <div class="entry-point"><strong class="entry-point-title">{{$t('index.manualAdd')}} </strong> </div>
                         <strong class="entry-point-title">Network Name: </strong> <CopyText :val="'REI Network'"></CopyText><br>
                         <strong class="entry-point-title">RPC URL: </strong> <CopyText :val="'https://rpc.rei.network'"></CopyText><br>
                         <strong class="entry-point-title">ChainID: </strong> <CopyText :val="'47805'"></CopyText><br>
@@ -78,8 +81,7 @@
               </div>
               </div>
             </a-form-model>
-          </a-tab-pane>
-        </a-tabs>
+          </a-card>
       </div>
     </div>
   </div>
@@ -294,6 +296,13 @@ export default {
   }
   
 }
+.top_title{
+    text-align: center;
+}
+.formWrap{
+    margin: 20px auto;
+    width: 450px;
+}
 .addr {
   .well {
     cursor: pointer;
@@ -336,6 +345,10 @@ export default {
   .icon-arrow {
     width: 25px;
   }
+  .icon-arraw-wrap{
+      text-align:center;
+      line-height:0.8rem;
+  }
   .coin-name-wrap {
     display: flex;
     padding: 0 0.5rem;
@@ -343,6 +356,7 @@ export default {
     font-size: 18px;
     font-weight: bolder;
     align-items: center;
+    justify-content: center;
     span {
       display: inline-block;
       padding-left: 5px;
@@ -391,6 +405,9 @@ export default {
         border-bottom: 1px dashed #a19e9e;
     }
   }
+  .convertCard{
+      border-radius:1rem;
+  }
   .add-content-title{
       font-size: .65rem;
       color: #595959;
@@ -408,6 +425,7 @@ export default {
     color: #f00;
     font-weight: bolder;
   }
+
   .cell {
     border-radius: 5px;
     background: #f3e1b7;

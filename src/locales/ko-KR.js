@@ -15,10 +15,11 @@ const locale = {
     actual_arrived_amount: '실제 입금 금액',
     transfer_amount: '이체 금액',
     minutes: '분',
-    addtips: 'Add REI Network',
+    addtips: 'REI 네트워크 추가',
     autoAdd: 'Auto Add',
     manualAdd: 'Manual Add',
-    wallet_tip: 'Please use the REI wallet address where you control the private key'
+    wallet_tip: '자기가 개인 키를 관리하는 REI 지갑 주소를 사용해주세요.',
+    click_to_add: '클릭하여 추가하기'
   }
 };
 export default locale;

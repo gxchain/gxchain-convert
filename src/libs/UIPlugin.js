@@ -1,4 +1,4 @@
-import { Tabs, FormModel, Input, InputNumber, Select, Col, Row, Button, Dropdown, Menu, Icon, notification, Modal, Table, Steps, List, Spin, Tooltip } from 'ant-design-vue';
+import { Tabs, FormModel, Input, InputNumber, Select, Col, Row, Button, Dropdown, Menu, Icon, notification, Modal, Table, Steps, List, Spin, Tooltip, Card } from 'ant-design-vue';
 
 export default {
   install(Vue) {
@@ -19,6 +19,7 @@ export default {
     Vue.use(InputNumber);
     Vue.use(Spin);
     Vue.use(Tooltip);
+    Vue.use(Card)
 
     Vue.prototype.$notification = notification;
     Vue.prototype.$confirm = Modal.confirm;
