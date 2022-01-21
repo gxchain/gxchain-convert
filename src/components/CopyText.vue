@@ -59,5 +59,8 @@ export default {
 </script>
 
 <style>
+.addr{
+    cursor: pointer;
+}
 
 </style>
