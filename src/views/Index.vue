@@ -28,16 +28,17 @@
           >
             <h2 class="top_title">{{$t('index.convert')}}</h2>
             <a-form-model>
-              <a-form-model-item class="formWrap" labelAlign="left" :label-col="formItemLayout.labelCol" :wrapper-col="formItemLayout.wrapperCol" :label="$t('index.convert_type')">
-                <a-row :gutter="8" >
-                  <a-col :span="8" class="coin-name-wrap"> <img src="../assets/images/gxc.png" class="icon-wrap" /> <span>GXC</span> </a-col>
-                  <a-col :span="4" class="icon-arraw-wrap">
-                      (1:10)
-                    <img src="../assets/images/icon-arrow.png" class="icon-wrap icon-arrow" />
-                  </a-col>
-                  <a-col :span="8" class="coin-name-wrap"> <img src="../assets/images/rei.svg" class="icon-wrap" /> <span>REI</span> </a-col>
-                </a-row>
-              </a-form-model-item>
+                <div class="titleWrap">
+                  <a-row >
+                    <a-col :span="8" class="coin-name-wrap"> <img src="../assets/images/gxc.png" class="icon-wrap" /> <span>GXC</span> </a-col>
+                    <a-col :span="8" class="icon-arraw-wrap">
+                        (1:10)
+                        <img src="../assets/images/icon-arrow.png" class="icon-wrap icon-arrow" />
+                    </a-col>
+                    <a-col :span="8" class="coin-name-wrap"> <img src="../assets/images/rei.svg" class="icon-wrap" /> <span>REI</span> </a-col>
+                  </a-row>
+                </div>
+              
 
               <div class="depositDesc">
                 
@@ -83,6 +84,24 @@
             </a-form-model>
           </a-card>
       </div>
+      <div class="contentSteps">
+          <div class="item-title">FAQ</div>
+          <div class="item-content">
+            <a-list item-layout="horizontal" :data-source="faqList">
+                <a-list-item slot="renderItem" slot-scope="item">
+                <a-list-item-meta
+                    
+                >
+                    <a slot="title" >{{ item.title }}</a>
+                    <div slot="description" v-html="item.description">
+                    
+                    </div>
+                    
+                </a-list-item-meta>
+                </a-list-item>
+            </a-list>
+          </div>
+      </div>
     </div>
   </div>
 </template>
@@ -115,7 +134,7 @@ export default {
         'zh-CN': '中文',
         'en-US': 'EN',
         'ko-KR': '한국어'
-      },
+      }
     };
   },
   mounted() {
@@ -139,6 +158,31 @@ export default {
         }
       }
       return _layout
+    },
+    faqList(){
+        const list = [
+            {
+                title: this.$t('faq.item1'),
+                description: this.$t('faq.item1_a')
+            },
+            {
+                title: this.$t('faq.item2'),
+                description: this.$t('faq.item2_a')
+            },
+            {
+                title: this.$t('faq.item3'),
+                description: this.$t('faq.item3_a')
+            },
+             {
+                title: this.$t('faq.item4'),
+                description: this.$t('faq.item4_a')
+            },
+             {
+                title: this.$t('faq.item5'),
+                description: this.$t('faq.item5_a')
+            },
+        ];
+        return list
     }
   },
   methods: {
@@ -347,7 +391,7 @@ export default {
   }
   .icon-arraw-wrap{
       text-align:center;
-      line-height:0.8rem;
+      line-height: 1.5rem;
   }
   .coin-name-wrap {
     display: flex;
@@ -381,6 +425,10 @@ export default {
   .btn-reset {
     background-color: #f5f5f5;
     border-bottom-right-radius: 1rem;
+  }
+  .titleWrap {
+    padding: 10px 15px;
+    margin: 20px auto;
   }
   .depositDesc {
     padding: 10px 15px;
@@ -503,7 +551,9 @@ export default {
   width: 600px;
   margin: 20px auto;
   padding: 0;
+  border-radius:1rem;
   background-color: #fff;
+  box-shadow: 0 0 8px #ccc;
 }
 .rightSider {
   margin: 2rem auto 0;
@@ -559,5 +609,14 @@ export default {
 }
 .btn-copy {
   margin-left: 10px;
+}
+.item-title{
+    padding: 10px 15px;
+    line-height: 200%;
+    font-size: 1rem;
+    font-weight:bold
+}
+.item-content{
+    padding: 10px 15px;
 }
 </style>
