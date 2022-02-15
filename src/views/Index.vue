@@ -611,12 +611,12 @@ export default {
   margin-left: 10px;
 }
 .item-title{
-    padding: 10px 15px;
+    padding: 10px 30px;
     line-height: 200%;
     font-size: 1rem;
     font-weight:bold
 }
 .item-content{
-    padding: 10px 15px;
+    padding: 10px 30px;
 }
 </style>
