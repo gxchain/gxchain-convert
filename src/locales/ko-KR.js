@@ -1,6 +1,7 @@
 const locale = {
   index: {
     hours:'시간',
+    days:'일',
     account_has_already_copied: '계정 주소 복사 완료',
     convert: '자산 스왑',
     convert_type: '스왑 방식',

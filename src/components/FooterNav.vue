@@ -1,6 +1,6 @@
 <template>
   <footer class="footer-box">
-    © 2017-2022 GXChain Foundation Ltd.&nbsp;&nbsp;<a target="_blank" href="https://github.com/gxchain/gxc-convert-contract"><a-icon type="github"/></a>
+    © 2017-2023 GXChain Foundation Ltd.&nbsp;&nbsp;<a target="_blank" href="https://github.com/gxchain/gxc-convert-contract"><a-icon type="github"/></a>
   </footer>
 </template>
 

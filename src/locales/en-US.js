@@ -1,6 +1,7 @@
 const locale = {
   index: {
     hours:' Hours',
+    days: ' Days',
     account_has_already_copied: 'Account address is copied',
     convert: 'Convert',
     convert_type: 'Convert Type',

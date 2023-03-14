@@ -61,7 +61,7 @@
                   </div>
                 </div>
                 <div class="tips-bottom">
-                    <p>{{$t('index.estimated_arrived_time')}}<span class="contract-account">24{{$t('index.hours')}}</span></p>
+                    <p>{{$t('index.estimated_arrived_time')}}<span class="contract-account">7{{$t('index.days')}}</span></p>
                 </div>
               </div>
               <div class="depositDesc addReiWap">

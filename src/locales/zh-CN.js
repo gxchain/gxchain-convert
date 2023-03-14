@@ -1,6 +1,7 @@
 const locale = {
   index: {
     hours:'小时',
+    days:'天',
     account_has_already_copied: '账户地址已复制',
     convert: '资产兑换',
     convert_type: '兑换方式',
